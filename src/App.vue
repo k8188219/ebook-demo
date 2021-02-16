@@ -1,29 +1,24 @@
 <template>
-	<div id="app">
-		<!--		<input type="file" id="input" style="font-size: 20px"/>-->
-		<v-app>
-			<router-view/>
-		</v-app>
-	</div>
+  <v-app>
+    <router-view />
+  </v-app>
 </template>
 
 <script>
-	export default {
-		name: 'App'
-	}
-	document.addEventListener('DOMContentLoaded', () => {
-		const html = document.querySelector('html')
-		let fontSize = window.innerWidth / 10
-		fontSize = fontSize > 50 ? 50 : fontSize
-		html.style.fontSize = fontSize + 'px'
-	})
+export default {
+  name: "App",
+  mounted() {
+    const html = document.querySelector("html");
+    const fontSize = Math.min(50, window.innerWidth / 10);
+    html.style.fontSize = fontSize + "px";
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-	#app {
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-	}
-
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 </style>
